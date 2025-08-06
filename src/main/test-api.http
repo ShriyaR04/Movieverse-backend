@@ -1,0 +1,21 @@
+### Login and get JWT
+POST http://localhost:8080/api/auth/signup
+Content-Type: application/json
+
+{
+  "username": "WhatIsThis",
+  "email": "Billii@example.com",
+  "password": "somesecurepassword"
+}
+### Then login
+
+POST http://localhost:8080/api/auth/login
+Content-Type: application/json
+
+{
+"username": "WhatIsThis",
+"password": "somesecurepassword"
+}
+### Use JWT to access secured endpoint
+GET http://localhost:8080/api/auth/user/profile
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJteW5hbWVpcyIsImlhdCI6MTc1NDI4NDkwNywiZXhwIjoxNzU0MzcxMzA3fQ.kXcAmnTb96SUJHtySg8NTAukTDT4pgFe82rVOif98aY
